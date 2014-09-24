@@ -12,10 +12,10 @@ export default Ember.ArrayController.extend({
     sortProperties: ['abbrev'],
     sortAscending: true,
 
-    actions:{
+    actions: {
 
         // process new wbs item submissions
-        newWbs: function(){
+        newWbs: function () {
 
             // create item instance and populate values using
             var item = this.store.createRecord('item', {
@@ -29,7 +29,7 @@ export default Ember.ArrayController.extend({
             var controller = this;
 
             // save item instance into data store and clear form field values
-            item.save().then(function(item){
+            item.save().then(function () {
                 controller.set('wbsCode', '');
                 controller.set('wbsAbbrev', '');
                 controller.set('wbsDesc', '');
@@ -37,7 +37,8 @@ export default Ember.ArrayController.extend({
             });
         },
 
-        showEditModal: function(){
+        // show the modal for editing
+        showEditModal: function () {
             Ember.$('#editModal').modal('show');
         }
     }
