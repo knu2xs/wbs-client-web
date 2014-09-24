@@ -1,0 +1,26 @@
+body {
+  margin-top: 50px;
+}
+
+/* little hack to make the top nav links behave more like you would expect them to */
+.navbar-nav > li > a {
+  cursor: pointer;
+}
+
+.navbar-nav > li.active > a {
+  cursor: default;
+}
+
+/* change the checkbox to something a little less ugly*/
+.glyphicon:before {
+  visibility: visible;
+  cursor: pointer;
+}
+
+.glyphicon.glyphicon-unchecked:checked:before {
+  content: "\e067";
+}
+
+input[type=checkbox].glyphicon {
+  visibility: hidden;
+}
