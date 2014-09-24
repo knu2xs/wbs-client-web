@@ -5,8 +5,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function () {
+    this.route('index', { path: '/' });
     this.route('items');
-    this.resource('item', { path: 'items/:item_id' });
+    this.resource('edit', { path: 'items/:item_id/edit' });
+    this.route('new', { path: 'items/new' });
 });
 
 export default Router;

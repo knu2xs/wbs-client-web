@@ -1,26 +1,36 @@
 body {
-  margin-top: 50px;
+    margin-top: 70px;
 }
 
 /* little hack to make the top nav links behave more like you would expect them to */
 .navbar-nav > li > a {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .navbar-nav > li.active > a {
-  cursor: default;
+    cursor: default;
 }
 
 /* change the checkbox to something a little less ugly*/
 .glyphicon:before {
-  visibility: visible;
-  cursor: pointer;
+    visibility: visible;
+    cursor: pointer;
 }
 
 .glyphicon.glyphicon-unchecked:checked:before {
-  content: "\e067";
+    content: "\e067";
 }
 
 input[type=checkbox].glyphicon {
-  visibility: hidden;
+    visibility: hidden;
+}
+
+/* clean up the iframe */
+iframe {
+    border-radius: 8px;
+}
+
+/* seperate the footer a little */
+footer {
+    padding-top: 10px;
 }
