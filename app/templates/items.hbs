@@ -1,37 +1,41 @@
 <div class="row">
-    <h1>
-        WBS List
-        <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#newModal">
-            <span class="glyphicon glyphicon-plus"></span> New WBS
-        </button>
-    </h1>
+    <div class="col-sm-12">
+        <h1>
+            WBS List
+            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#newModal">
+                <span class="glyphicon glyphicon-plus"></span> New WBS
+            </button>
+        </h1>
+    </div>
 </div>
 
 <div class="row">
-    <table class="table table-condensed">
-        <thead>
-        <tr>
-            <th>Code</th>
-            <th>Abbreviation</th>
-            <th>Description</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        {{#each}}
-            <tr {{bind-attr class="isSuffix:active"}}>
-                <td>{{code}}</td>
-                <td>{{abbrev}}</td>
-                <td>{{desc}}</td>
-                <td>
-                    <button {{action 'showEditModal'}} class="btn btn-default btn-sm pull-right">
-                        <span class="glyphicon glyphicon-edit"></span> Edit
-                    </button>
-                </td>
+    <div class="col-sm-12">
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Code</th>
+                <th>Abbreviation</th>
+                <th>Description</th>
+                <th></th>
             </tr>
-        {{/each}}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {{#each}}
+                <tr {{bind-attr class="isSuffix:active"}}>
+                    <td>{{code}}</td>
+                    <td>{{abbrev}}</td>
+                    <td>{{desc}}</td>
+                    <td>
+                        <button {{action 'showEditModal'}} class="btn btn-default btn-sm pull-right">
+                            <span class="glyphicon glyphicon-edit"></span> Edit
+                        </button>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="false">
