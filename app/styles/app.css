@@ -34,3 +34,8 @@ iframe {
 footer {
     padding-top: 10px;
 }
+
+/* remove pointer from checkboxes in items list */
+table > tbody > tr > td > span.glyphicon:before {
+    cursor:default;
+}
