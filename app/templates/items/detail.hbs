@@ -1,0 +1,10 @@
+<h1>{{abbrev}}</h1>
+<p>Code: {{code}}</p>
+<p>Abbreviation: {{abbrev}}</p>
+<p>Description: {{desc}}</p>
+{{#if 'isSuffix'}}
+    <p>{{abbrev}} is a suffix.</p>
+{{else}}
+    <p>{{abbrev}} is not a suffix.</p>
+{{/if}}
+{{outlet}}
