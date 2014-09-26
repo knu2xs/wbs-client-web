@@ -10,6 +10,9 @@ var Code = DS.Model.extend({
     suffixes: DS.hasMany('item', { async: true }),
     editText: function(){
         return 'Edit ' + this.get('abbrev');
+    }.property('abbrev'),
+    deleteText: function(){
+        return 'Permanantly delete ' + this.get('abbrev');
     }.property('abbrev')
 });
 

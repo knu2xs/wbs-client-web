@@ -8,7 +8,7 @@ export default Ember.Route.extend({
 
     // if back button is pressed, clean up uncommitted edits
     deactivate: function () {
-        var model = this.modelFor('items.edit');
+        var model = this.modelFor('items.new');
         if (model && model.get('isDirty') && !model.get('isSaving')) {
             model.rollback();
         }

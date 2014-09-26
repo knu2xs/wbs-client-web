@@ -7,6 +7,7 @@ export default Ember.ArrayController.extend({
     sortAscending: true,
 
     actions: {
+
         // go to edit page for item
         gotoEdit: function (item) {
             this.transitionToRoute('items.edit', item);

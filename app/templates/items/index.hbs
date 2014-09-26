@@ -20,6 +20,7 @@
                 <th>Suffix</th>
                 <th>COTS</th>
                 <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -37,6 +38,12 @@
                         {{#if isCotsCourse}}
                             <span class="glyphicon glyphicon-check"></span>
                         {{/if}}
+                    </td>
+                    <td>
+                        <button {{action 'remove' this}} {{bind-attr title='deleteText'}}
+                                class="btn btn-danger btn-sm pull-right">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
                     </td>
                     <td>
                         <button {{action 'gotoEdit' this}} {{bind-attr title='editText'}}
