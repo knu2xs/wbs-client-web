@@ -1,39 +1,25 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    // variables for form values
-    wbsCode: '',
-    wbsAbbrev: '',
-    wbsDesc: '',
-    wbsIsSuffix: false,
+    model: function(){
+        this.store.find('item"');
+    },
 
     actions: {
 
         // exit without changing anything
         cancel: function(item) {
             item.rollback();
-            this.transitionToRoute('items');
+            this.transitionTo('items.index');
         },
 
-        // go to edit dialog for item
-        edit: function(item) {
+        // enter the new dialog with a new item instance
 
-            // set values from form to current instance model
-            this.set('code', this.wbsCode);
-            this.set('abbrev', this.wbsAbbrev);
-            this.set('desc', this.wbsDesc);
-            this.set('isSuffix', this.wbsIsSuffix);
-
-            // save item instance into data store and return to items list
-            item.save().then(function () {
-                this.transitionToRoute('items');
-            });
+        // enter the edit dialog
+        edit: function(item){
+            this.transitionTo('items.edit', item);
         },
 
-        // remove the current wbs item
-        remove: function(item) {
-            item.destroyRecord();
-            this.transitionToRoute('items');
-        }
+
     }
 });

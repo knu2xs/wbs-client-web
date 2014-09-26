@@ -28,13 +28,13 @@
         </div>
     </div>
     <div class="col-md-offset-2">
-        <buton type="button" {{action 'cancel'}} class="btn btn-default">
+        <buton type="button" {{action 'cancel' model}} class="btn btn-default">
             <span class="glyphicon glyphicon-remove-circle"></span> Cancel
         </buton>
-        <button type="submit" {{action 'edit'}} class="btn btn-primary">
+        <button type="submit" {{action 'save' model}} class="btn btn-primary">
             <span class="glyphicon glyphicon-save"></span> Save
         </button>
-        <button type="button" {{action 'remove'}} class="btn btn-danger">
+        <button type="button" {{action 'remove' model}} class="btn btn-danger">
             <span class="glyphicon glyphicon-warning-sign"></span> Delete
         </button>
     </div>

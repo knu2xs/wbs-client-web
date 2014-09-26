@@ -37,5 +37,10 @@ footer {
 
 /* remove pointer from checkboxes in items list */
 table > tbody > tr > td > span.glyphicon:before {
-    cursor:default;
+    cursor: default;
+}
+
+/* display intuitive pointer for wbs list items */
+.item-detail-link {
+    cursor: pointer;
 }

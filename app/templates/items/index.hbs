@@ -23,7 +23,7 @@
             </thead>
             <tbody>
             {{#each}}
-                <tr>
+                {{#link-to 'items.detail' this tag='tr' class='item-detail-link'}}
                     <td>{{code}}</td>
                     <td>{{abbrev}}</td>
                     <td>{{desc}}</td>
@@ -40,7 +40,7 @@
                             <span class="glyphicon glyphicon-pencil"></span>
                         </button>
                     </td>
-                </tr>
+                {{/link-to}}
             {{/each}}
             </tbody>
         </table>
