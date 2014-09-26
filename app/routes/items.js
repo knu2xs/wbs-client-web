@@ -1,3 +1,4 @@
+// routes/items.js
 import Ember from 'ember';
 
 export default Ember.Route.extend({
@@ -20,8 +21,10 @@ export default Ember.Route.extend({
             this.transitionToRoute('items');
         },
 
+
+
         // process new wbs item submissions
-        saveNew: function () {
+        edit: function () {
 
             // set values from form to current instance model
             this.set('code', this.wbsCode);
