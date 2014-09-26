@@ -2,7 +2,7 @@
     <div class="col-sm-12">
         <h1>
             WBS List
-            {{#link-to 'new' class='btn btn-primary pull-right'}}
+            {{#link-to 'items.new' class='btn btn-primary pull-right'}}
                 <span class="glyphicon glyphicon-plus"></span> New WBS
             {{/link-to}}
         </h1>
@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <table class="table table-condensed">
+        <table class="table table-condensed table-hover">
             <thead>
             <tr>
                 <th>Code</th>
@@ -23,7 +23,7 @@
             </thead>
             <tbody>
             {{#each}}
-                <tr {{bind-attr class="isSuffix:active"}}>
+                <tr>
                     <td>{{code}}</td>
                     <td>{{abbrev}}</td>
                     <td>{{desc}}</td>
@@ -35,9 +35,10 @@
                         {{/if}}
                     </td>
                     <td>
-                        {{#link-to 'edit' this tagName='button' class='btn btn-default btn-sm pull-right'}}
-                            <span class="glyphicon glyphicon-edit"></span> Edit
-                        {{/link-to}}
+                        <button {{action 'gotoEdit' this}} {{bind-attr title='editText'}}
+                                class="btn btn-default btn-sm pull-right">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
                     </td>
                 </tr>
             {{/each}}

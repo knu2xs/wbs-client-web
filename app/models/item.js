@@ -1,3 +1,4 @@
+// app/models/item.js
 import DS from 'ember-data';
 
 var Code = DS.Model.extend({
@@ -5,7 +6,11 @@ var Code = DS.Model.extend({
     abbrev: DS.attr('string'),
     desc: DS.attr('string'),
     isSuffix: DS.attr('boolean'),
-    suffixes: DS.hasMany('item', { async: true })
+    isCotsCourse: DS.attr('boolean'),
+    suffixes: DS.hasMany('item', { async: true }),
+    editText: function(){
+        return 'Edit ' + this.get('abbrev');
+    }.property('abbrev')
 });
 
 Code.reopenClass({
@@ -30,6 +35,7 @@ Code.reopenClass({
             abbrev: 'ARC4',
             desc: 'ArcGIS 4: Sharing Content on the Web',
             isSuffix: false,
+            isCotsCourse: true,
             suffixes: [101, 102]
         },
         {
@@ -38,6 +44,7 @@ Code.reopenClass({
             abbrev: 'ARC1',
             desc: 'ArcGIS 1: Introduction to GIS',
             isSuffix: false,
+            isCotsCourse: true,
             suffixes: [101, 102]
         }
 
