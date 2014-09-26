@@ -1,10 +1,36 @@
 <h1>{{abbrev}}</h1>
-<p>Code: {{code}}</p>
-<p>Abbreviation: {{abbrev}}</p>
-<p>Description: {{desc}}</p>
-{{#if 'isSuffix'}}
-    <p>{{abbrev}} is a suffix.</p>
-{{else}}
-    <p>{{abbrev}} is not a suffix.</p>
-{{/if}}
+<dl class="dl-horizontal">
+    <dt>Code</dt>
+    <dd>{{code}}</dd>
+    <dt>Abbreviation</dt>
+    <dd>{{abbrev}}</dd>
+    <dt>Description</dt>
+    <dd>{{desc}}</dd>
+    <dt>Is Suffix</dt>
+    <dd>
+    {{#if 'isSuffix'}}
+        False, <em>{{abbrev}}</em> is a suffix.
+    {{else}}
+        True, <em>{{abbrev}}</em> is a prefix.
+    {{/if}}
+    </dd>
+    <dt>Is COTS Course</dt>
+    <dd>
+        {{#if 'isCotsClass'}}
+            True, <em>{{abbrev}}</em> is a COTS course.
+        {{else}}
+            False, <em>{{abbrev}}</em> is not a COTS course.
+        {{/if}}
+    </dd>
+    <dt>Suffixes</dt>
+    <dd>
+        {{#if 'suffixes'}}
+            {{#each suffix in suffixes}}
+                {{#link-to 'items.detail' suffix}}{{suffix.abbrev}} ({{suffix.code}}){{/link-to}}<br/>
+            {{/each}}
+        {{else}}
+            Does not have any suffixes.
+        {{/if}}
+    </dd>
+</dl>
 {{outlet}}
