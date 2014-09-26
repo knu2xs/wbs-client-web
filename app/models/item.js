@@ -46,6 +46,39 @@ Code.reopenClass({
             isSuffix: false,
             isCotsCourse: true,
             suffixes: [101, 102]
+        },
+        {
+            id: 3,
+            code: 'C04232',
+            abbrev: 'ARC2',
+            desc: 'ArcGIS 2: Essential Workflows',
+            isSuffix: false,
+            isCotsCourse: true,
+            suffixes: [101, 102]
+        },
+        {
+            id: 4,
+            code: 'C04247',
+            abbrev: 'ARC3',
+            desc: 'ArcGIS 3: Performing Analysis',
+            isSuffix: false,
+            isCotsCourse: true,
+            suffixes: [101, 102]
+        },
+        {
+            id: 5,
+            code: 'C04231',
+            abbrev: 'IMGD',
+            desc: 'Introduction to the Multiuser Geodatabase',
+            isSuffix: false,
+            isCotsCourse: true,
+            suffixes: [101, 102]
+        },
+        {
+            id: 6,
+            code: '4710',
+            abbrev: 'OVR',
+            desc: 'General overhead - instructor labor'
         }
 
     ]
