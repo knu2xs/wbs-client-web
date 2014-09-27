@@ -6,6 +6,11 @@ export default Ember.Route.extend({
         return this.store.find('item', params.item_id);
     },
 
+    // make model accessible in controller
+    setupController: function(controller, item) {
+        controller.set('model', item);
+    },
+
     // if back button is pressed, clean up uncommitted edits
     deactivate: function () {
         var model = this.modelFor('items.edit');
