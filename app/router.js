@@ -11,7 +11,7 @@ Router.map(function () {
         this.route('detail', { path: '/:item_id'});
         this.route('new');
     });
-    this.route('code', { path: '/:item_id' });
+    this.route('code', { path: '/:code_id' });
 });
 
 export default Router;
